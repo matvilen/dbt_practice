@@ -1,0 +1,10 @@
+version: 1
+
+sources:
+  - name: chicago_taxi_trips
+    database: bigquery-public-data
+    tables: 
+      - name: trips
+        identifier: taxi_trips
+
+

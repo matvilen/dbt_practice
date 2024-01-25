@@ -1,0 +1,6 @@
+
+dbt_proj/target/
+dbt_proj/dbt_packages/
+dbt_proj/logs/
+
+*.json

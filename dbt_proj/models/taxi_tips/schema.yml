@@ -1,0 +1,45 @@
+models:
+  - name: cars_with_biggest_tips
+    description: "Мodel finding n cars with biggest sum of tips in specified period"
+    columns:
+      - name: taxi_id
+        description: "The primary key for taxists"
+        tests:
+          - unique
+          - not_null
+
+
+  - name: tips_by_months
+    description: "Counting sum of tips for found cars(in cars_with_biggest_tips model) by months since specified date"
+    columns:
+      - name: taxi_id
+        description: "The primary key for taxists"
+        tests:
+          - unique
+          - not_null
+      - name: year_month
+        description: "Period, during of which, sum of tips is count for particular taxist"
+        tests:
+          - not_null
+      - name: tips_sum
+        description: "Sum of tips for period of time and for taxist, pointed in previos columns"
+
+  
+  - name: tips_change_in_perc_by_months
+    description: "Percent change in tips amount in subsequent months compared to each previous month
+in table"  
+    columns:
+      - name: taxi_id
+        description: "The primary key for taxists"
+        tests:
+          - unique
+          - not_null
+      - name: year_month
+        description: "Period, during of which, sum of tips is count for particular taxist"
+        tests:
+          - not_null
+      - name: tips_sum
+        description: "Sum of tips for period of time and for taxist, pointed in previos columns"
+      - name: tips_change
+        description: "Percentage change in tips amount compared to each previous month"
+
